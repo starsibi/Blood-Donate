@@ -1,0 +1,7 @@
+{
+  "name": "Copy of BloodLink - Life Saving Donation Platform",
+  "description": "A comprehensive blood donation platform that connects donors with centers, manages donation history, and provides AI-powered health advice for donors.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
