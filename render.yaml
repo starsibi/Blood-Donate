@@ -3,12 +3,11 @@ services:
   - type: static
     name: bloodlink
     env: static
-    # Since this app uses browser-native ESM and esm.sh imports via importmap,
-    # no build step is required. We serve the files directly.
-    buildCommand: ""
-    publishPath: "."
-    # Handle SPA routing by rewriting all requests to index.html
-    # so that client-side routing works on refresh.
+    # Command to install dependencies and compile the app
+    buildCommand: "npm install && npm run build"
+    # Vite outputs the finished site to the 'dist' folder
+    publishPath: "dist"
+    # Ensure SPA routing works (redirects all paths to index.html)
     routes:
       - type: rewrite
         source: /*
