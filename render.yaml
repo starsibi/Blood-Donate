@@ -1,0 +1,15 @@
+
+services:
+  - type: static
+    name: bloodlink
+    env: static
+    # Since this app uses browser-native ESM and esm.sh imports via importmap,
+    # no build step is required. We serve the files directly.
+    buildCommand: ""
+    publishPath: "."
+    # Handle SPA routing by rewriting all requests to index.html
+    # so that client-side routing works on refresh.
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
